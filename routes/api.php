@@ -30,3 +30,12 @@ Route::get('/categories/{id}', [CategoryController::class, 'show'])->middleware(
 Route::post('/categories', [CategoryController::class, 'store'])->middleware('auth:sanctum');
 Route::put('/categories/{id}', [CategoryController::class, 'update'])->middleware('auth:sanctum');
 Route::delete('/categories/{id}', [CategoryController::class, 'destroy'])->middleware('auth:sanctum');
+
+
+Route::get('/hello', function () {
+    return response()->json(['message' => 'Hello']);
+});
+
+Route::get('/ping', function () {
+    return response()->json(['message' => 'pong']);
+});

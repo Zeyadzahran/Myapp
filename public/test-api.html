@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>API Test</title>
+</head>
+
+<body>
+    <h1>Laravel API Test</h1>
+    <div id="result"></div>
+
+    <script>
+        // Test the API hello endpoint
+        fetch('http://127.0.0.1:8000/api/hello')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('result').innerHTML =
+                    '<p>API Test Result: ' + JSON.stringify(data) + '</p>';
+            })
+            .catch(error => {
+                document.getElementById('result').innerHTML =
+                    '<p>Error: ' + error.message + '</p>';
+            });
+    </script>
+</body>
+
+</html>
